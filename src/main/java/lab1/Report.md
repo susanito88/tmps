@@ -1,6 +1,6 @@
 # Topic: Creational Design Patterns
 ### Course: Software Modeling & Design Techniques (aka TMPS)
-### Author: Alexandru Magla | FAF-23
+### Author: Alexandru Magla | FAF-231
 
 ---
 

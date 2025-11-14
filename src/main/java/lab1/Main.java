@@ -1,9 +1,9 @@
 package lab1;
 import lab1.models.Car;
+import lab1.factory.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Get instance of ProductionManager (Singleton)
         ProductionManager manager1 = ProductionManager.getInstance();
         ProductionManager manager2 = ProductionManager.getInstance();
 
@@ -15,12 +15,15 @@ public class Main {
 
         manager1.log("Starting production cycle.");
 
-        CarFactory factory = new CarFactory();
-        Car sedan = factory.createCar("sedan");
-        Car suv = factory.createCar("suv");
-        Car sports = factory.createCar("sportscar");
+        CarFactory sedanFactory = new SedanFactory();
+        CarFactory suvFactory = new SUVFactory();
+        CarFactory sportsFactory = new SportsCarFactory();
 
-        System.out.println("\nFactory produced vehicles:");
+        Car sedan = sedanFactory.createCar();
+        Car suv = suvFactory.createCar();
+        Car sports = sportsFactory.createCar();
+
+        System.out.println("Factory produced vehicles:");
         sedan.displayInfo();
         suv.displayInfo();
         sports.displayInfo();
